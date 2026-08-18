@@ -1,0 +1,41 @@
+{
+ "version": "2.2.4",
+ "songName": "Fresh (Sunndy Mix)",
+ "artist": "Sycles",
+ "charter": "Enzo Programmer Noob!",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "hard"
+  ],
+  "characters": {
+   "player": "sunndy-playable",
+   "girlfriend": "gaby",
+   "opponent": "dad",
+   "instrumental": "sunndy",
+   "opponentVocals": [
+    "dad"
+   ],
+   "playerVocals": [
+    "sunndy-playable"
+   ]
+  },
+  "stage": "mainStageErect",
+  "noteStyle": "funkintemplate",
+  "ratings": {
+   "easy": 0,
+   "normal": 0,
+   "hard": 4
+  },
+  "album": "volume1-sunndy"
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.4",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 120,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

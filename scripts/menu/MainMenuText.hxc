@@ -1,0 +1,51 @@
+import flixel.FlxG;
+import funkin.ui.mainmenu.MainMenuState;
+import funkin.util.Constants;
+import funkin.modding.module.Module;
+import funkin.modding.events.ScriptEvent;
+import funkin.save.Save;
+import haxe.Json;
+
+class MainMenuText extends Module
+{
+	var buildNumber:String = "";
+
+	public function new()
+	{
+		super("MainMenuText", 1000);
+	}
+
+	override function onCreate(event:ScriptEvent):Void
+	{
+		super.onCreate(event);
+
+		try
+		{
+			var savedRaw:String = Save.instance.modOptions.get(SAVE_KEY);
+
+			if (savedRaw != null)
+			{
+				var parsed:Dynamic = Json.parse(savedRaw);
+				if (parsed != null && parsed.buildNumber != null)
+				{
+					buildNumber = parsed.buildNumber;
+				}
+			}
+		}
+		catch (e:Dynamic)
+		{}
+	}
+
+	override function onUpdate(event:UpdateScriptEvent)
+	{
+		super.onUpdate(event);
+
+		if (Std.isOfType(FlxG.state, MainMenuState))
+		{
+			FlxG.state.leftWatermarkText.text = "Friday Night Funkin': " + Constants.VERSION
+				+ " | Vs Sunndy [v0.1.0]";
+			FlxG.state.leftWatermarkText.y = 690;
+			FlxG.state.leftWatermarkText.size = 18;
+		}
+	}
+}

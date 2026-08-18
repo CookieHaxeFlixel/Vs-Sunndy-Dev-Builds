@@ -1,0 +1,20 @@
+import funkin.save.Save;
+import funkin.play.song.Song;
+
+class BopeeboHandreioxMixSong extends Song
+{
+  public function new()
+  {
+    super('bopeebo', {
+      variation: 'handreiox'
+    });
+  }
+
+  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
+  {
+    {
+      return !Save.instance.hasBeatenSong(this.id, null, '');
+    }
+    return false;
+  }
+}

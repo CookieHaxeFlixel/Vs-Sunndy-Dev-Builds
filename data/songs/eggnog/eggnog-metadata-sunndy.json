@@ -1,0 +1,41 @@
+{
+ "version": "2.2.4",
+ "songName": "Eggnog (Sunndy Mix)",
+ "artist": "Pixel Sycles",
+ "charter": "Enzo Programmer Noob!",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "hard"
+  ],
+  "characters": {
+   "player": "sunndy-playable",
+   "girlfriend": "gaby",
+   "opponent": "parents-christmas",
+   "instrumental": "sunndy",
+   "opponentVocals": [
+    "dadmom"
+   ],
+   "playerVocals": [
+    "sunndy-playable"
+   ]
+  },
+  "stage": "mallXmasSunndy",
+  "noteStyle": "funkintemplate",
+  "ratings": {
+   "hard": 5
+  },
+  "album": "volume1-sunndy",
+  "stickerPack": "default",
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.6",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 157,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

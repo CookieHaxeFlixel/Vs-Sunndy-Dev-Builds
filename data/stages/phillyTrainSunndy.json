@@ -1,0 +1,91 @@
+{
+ "version": "1.0.2",
+ "name": "Philly (Train) [Sunndy]",
+ "props": [
+  {
+   "assetPath": "philly/erect/sky",
+   "atlasSettings": null,
+   "name": "sky",
+   "position": [-100, 0],
+   "scale": 1,
+   "scroll": [0.1, 0.1],
+   "startingAnimation": null,
+   "zIndex": 10
+  },
+  {
+   "assetPath": "philly/erect/city",
+   "atlasSettings": null,
+   "name": "city",
+   "position": [-255, 45],
+   "scale": 0.9,
+   "scroll": [0.3, 0.3],
+   "startingAnimation": null,
+   "zIndex": 20
+  },
+  {
+   "assetPath": "philly/win",
+   "atlasSettings": null,
+   "name": "lights",
+   "position": [-184, 155],
+   "scale": 0.9,
+   "scroll": [0.3, 0.3],
+   "startingAnimation": null,
+   "zIndex": 30
+  },
+  {
+   "assetPath": "philly/erect/behindTrain",
+   "atlasSettings": null,
+   "name": "behindTrain",
+   "position": [-299, 144],
+   "scale": 1,
+   "startingAnimation": null,
+   "zIndex": 50
+  },
+  {
+   "assetPath": "philly/train",
+   "atlasSettings": null,
+   "name": "train",
+   "position": [2000, 360],
+   "scale": 1,
+   "startingAnimation": null,
+   "zIndex": 60
+  },
+  {
+   "assetPath": "philly/erect/street",
+   "atlasSettings": null,
+   "name": "street",
+   "position": [-299, 144],
+   "scale": 1,
+   "startingAnimation": null,
+   "zIndex": 70
+  },
+  {
+   "alpha": 0.3,
+   "assetPath": "shaderdosundimiquis",
+   "atlasSettings": null,
+   "name": "shader",
+   "position": [-324, 54],
+   "scale": 3,
+   "startingAnimation": "",
+   "zIndex": 1000
+  }
+ ],
+ "characters": {
+  "bf": {
+   "cameraOffsets": [-60, -10],
+   "position": [1129.98, 885.16],
+   "zIndex": 300
+  },
+  "dad": {
+   "cameraOffsets": [100, -50],
+   "position": [419.5, 871],
+   "zIndex": 200
+  },
+  "gf": {
+   "cameraOffsets": [-50, 100],
+   "position": [834.25, 771],
+   "zIndex": 100
+  }
+ },
+ "directory": "week3"
+}

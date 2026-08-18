@@ -1,0 +1,43 @@
+{
+ "version": "2.2.4",
+ "songName": "M.I.L.F (Sunndy Mix)",
+ "artist": "Sycles",
+ "charter": "DuduYTGamer",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "sunndy-playable",
+   "girlfriend": "gaby",
+   "opponent": "mom-car",
+   "instrumental": "sunndy",
+   "opponentVocals": [
+    "mom-car"
+   ],
+   "playerVocals": [
+    "sunndy-playable"
+   ]
+  },
+  "stage": "limoRideErect",
+  "noteStyle": "funkintemplate",
+  "ratings": {
+   "normal": 3,
+   "normal": 5,
+   "hard": 6
+  },
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.4",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 90,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

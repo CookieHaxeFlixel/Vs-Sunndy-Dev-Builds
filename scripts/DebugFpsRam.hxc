@@ -1,0 +1,105 @@
+import funkin.modding.module.Module;
+import flixel.FlxG;
+import flixel.text.FlxText;
+import flixel.text.FlxTextBorderStyle;
+import flixel.util.FlxColor;
+import flixel.math.FlxMath;
+import openfl.system.System;
+
+class GlobalDebugCounterModule extends Module
+{
+  var fpsValueText:FlxText;
+  var memoryValueText:FlxText;
+
+  var displayedFps:Float = 0;
+  var maxFps:Int = 0;
+  var maxMemMB:Float = 0;
+
+  var textUpdateTimer:Float = 0;
+
+  public function new()
+  {
+    super("GlobalDebugCounterModule");
+  }
+
+  override function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+    if (!FlxG.onMobile) return;
+
+    createUI();
+  }
+
+  override function onStateChangeEnd(event):Void
+  {
+    super.onStateChangeEnd(event);
+    if (!FlxG.onMobile) return;
+
+    createUI();
+  }
+
+  function createUI():Void
+  {
+    if (fpsValueText != null && fpsValueText.exists) return;
+
+    var lastCamera = FlxG.cameras.list[FlxG.cameras.list.length - 1];
+    var textSize:Int = 18;
+
+    fpsValueText = new FlxText(30, 10, 0, "FPS: 0 / 0", textSize);
+    fpsValueText.setFormat("VCR OSD Mono", textSize, FlxColor.WHITE, "left", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+    fpsValueText.borderSize = 2;
+    fpsValueText.scrollFactor.set(0, 0);
+    fpsValueText.cameras = [lastCamera];
+    FlxG.state.add(fpsValueText);
+
+    memoryValueText = new FlxText(30, 32, 0, "RAM: 0 / 0 MB", textSize);
+    memoryValueText.setFormat("VCR OSD Mono", textSize, FlxColor.WHITE, "left", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+    memoryValueText.borderSize = 2;
+    memoryValueText.scrollFactor.set(0, 0);
+    memoryValueText.cameras = [lastCamera];
+    FlxG.state.add(memoryValueText);
+  }
+
+  override function onUpdate(event:ScriptEvent):Void
+  {
+    super.onUpdate(event);
+    if (!FlxG.onMobile) return;
+
+    if (fpsValueText == null || !fpsValueText.exists)
+    {
+      createUI();
+      return;
+    }
+
+    var elapsed:Float = FlxMath.bound(FlxG.elapsed, 0.00001, 1);
+    var realFps:Float = 1 / elapsed;
+    displayedFps = FlxMath.lerp(displayedFps, realFps, 0.1);
+
+    var fpsRounded:Int = Math.floor(displayedFps);
+    if (fpsRounded > maxFps) maxFps = fpsRounded;
+
+    var memMegabytes:Float = System.totalMemory / 1024 / 1024;
+    if (memMegabytes > maxMemMB) maxMemMB = memMegabytes;
+
+    textUpdateTimer += FlxG.elapsed;
+    if (textUpdateTimer < 0.3) return;
+    textUpdateTimer = 0;
+
+    fpsValueText.text = "FPS: " + fpsRounded + " / " + maxFps;
+    fpsValueText.color = (fpsRounded > 50) ? FlxColor.LIME : (fpsRounded < 25) ? FlxColor.RED : FlxColor.YELLOW;
+
+    var curRounded:Float = Math.round(memMegabytes * 10) / 10;
+    var maxRounded:Float = Math.round(maxMemMB * 10) / 10;
+    memoryValueText.text = "RAM: " + curRounded + " / " + maxRounded + " MB";
+    memoryValueText.color = (memMegabytes > 1689.6) ? FlxColor.RED : FlxColor.WHITE;
+  }
+
+  override function onDestroy(event:ScriptEvent):Void
+  {
+    super.onDestroy(event);
+    if (!FlxG.onMobile) return;
+
+    if (fpsValueText != null) { fpsValueText.kill(); fpsValueText.destroy(); fpsValueText = null; }
+    if (memoryValueText != null) { memoryValueText.kill(); memoryValueText.destroy(); memoryValueText = null; }
+  }
+}

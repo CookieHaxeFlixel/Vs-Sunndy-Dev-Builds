@@ -1,0 +1,17 @@
+{
+    "title": "Vs Sunndy",
+    "description": "The Sunndy Rework Build Mixestapes",
+    "contributors": [
+    {
+      "name": "Sunndy",
+      "role": "Creator of the mod"
+    },
+    {
+      "name": "Coder",
+      "role": "Coder Coder"
+    }
+  ],
+    "api_version": "0.8.0",
+    "mod_version": "1.0.0",
+    "license": "CC BY 4.0,MIT"
+}

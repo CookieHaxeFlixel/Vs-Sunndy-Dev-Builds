@@ -1,0 +1,76 @@
+import funkin.play.stage.Stage;
+import funkin.play.PlayState;
+import funkin.play.character.BaseCharacter;
+import funkin.play.character.CharacterType;
+import funkin.graphics.shaders.DropShadowShader;
+import funkin.modding.events.UpdateScriptEvent;
+
+class SunndyStage extends Stage
+{
+  // Variáveis globais do script
+  var rim:DropShadowShader;
+  var character_persist:BaseCharacter = null;
+  var lastShaderUpdate:Float = 0;
+  
+  // Variável de otimização que substitui o Save
+  var throttleActive:Bool = false;
+
+  function new()
+  {
+    super('sunndy');
+  }
+
+  function onCreate(event:ScriptEvent):Void
+  {
+    super.onCreate(event);
+  }
+
+  public function onGameOver(event:ScriptEvent)
+  {
+    super.onGameOver(event);
+    getBoyfriend().shader = null;
+  }
+
+  override function addCharacter(character:BaseCharacter, charType:CharacterType):Void
+  {
+    super.addCharacter(character, charType);
+
+    rim = new DropShadowShader();
+    rim.setAdjustColor(10, -15, 35, -18);
+    rim.color = 0x15FF4500; 
+    rim.angle = 91;
+    character.shader = rim;
+    rim.attachedSprite = character;
+
+    character_persist = character;
+  }
+  
+  override public function onUpdate(event:UpdateScriptEvent):Void
+  {
+    super.onUpdate(event);
+
+    // Evita crashes se as coisas ainda não carregaram na tela
+    if (character_persist == null || rim == null || character_persist.frame == null) return;
+
+    // Se o throttle estiver ligado, limita a atualização a 10 FPS para poupar o Moto G8
+    var interval = throttleActive ? (1.0 / 15.0) : 0; 
+
+    if (throttleActive)
+    {
+      var now = openfl.Lib.getTimer() / 1000;
+      if (now - lastShaderUpdate < interval) return;
+      lastShaderUpdate = now;
+    }
+
+    // Atualiza o frame do shader de forma leve
+    rim.updateFrameInfo(character_persist.frame);
+  }
+  
+  override function handleEvent(data):Void
+  {
+    super.handleEvent(data);
+
+    // Ativa a otimização econômica de shader direto no script
+    throttleActive = true;
+  }
+}

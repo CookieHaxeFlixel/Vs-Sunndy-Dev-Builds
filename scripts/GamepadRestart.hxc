@@ -1,0 +1,57 @@
+import funkin.modding.module.Module;
+import funkin.modding.events.ScriptEvent;
+import flixel.FlxG;
+import flixel.input.gamepad.FlxGamepadInputID;
+
+/**
+ * GamepadRestart (SOFTCODE / HScript)
+ * ----------------------------------------------------
+ * Reinicia o jogo (FlxG.resetGame()) quando você segura
+ * L2 + R2 ao mesmo tempo no controle.
+ *
+ * Mapeamento "universal" do Flixel (funciona igual em
+ * Xbox/PS4/PS5/Switch):
+ *   LEFT_TRIGGER  = L2 (PS) / LT (Xbox) / ZL (Switch)
+ *   RIGHT_TRIGGER = R2 (PS) / RT (Xbox) / ZR (Switch)
+ *
+ * COMO INSTALAR:
+ *   mods/MeuMod/scripts/GamepadRestart.hxc
+ * (sem precisar recompilar nada, é um Module global)
+ * ----------------------------------------------------
+ */
+class GamepadRestart extends Module
+{
+	// já dispara só na "borda de subida" (quando os 2 ficam
+	// pressionados juntos), pra não reiniciar toda hora
+	var comboWasActive:Bool = false;
+
+	public function new()
+	{
+		super("GamepadRestart", 999);
+	}
+
+	override function onUpdate(event:UpdateScriptEvent):Void
+	{
+		super.onUpdate(event);
+
+		var pad = FlxG.gamepads.firstActive;
+
+		if (pad == null)
+		{
+			comboWasActive = false;
+			return;
+		}
+
+		var l2Pressed:Bool = pad.pressed.LEFT_TRIGGER; // L2 / LT / ZL
+		var r2Pressed:Bool = pad.pressed.RIGHT_TRIGGER; // R2 / RT / ZR
+
+		var comboActive:Bool = l2Pressed && r2Pressed;
+
+		if (comboActive && !comboWasActive)
+		{
+			FlxG.resetGame();
+		}
+
+		comboWasActive = comboActive;
+	}
+}

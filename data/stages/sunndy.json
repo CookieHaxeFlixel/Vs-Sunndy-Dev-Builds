@@ -1,0 +1,81 @@
+{
+ "version": "1.0.2",
+ "name": "sunndystage",
+ "props": [
+  {
+   "assetPath": "ceu",
+   "atlasSettings": null,
+   "name": "ceu2",
+   "position": [57.5, 0],
+   "scale": 1,
+   "startingAnimation": "",
+   "zIndex": 1
+  },
+  {
+   "assetPath": "atrazdetudomenosdoceu",
+   "atlasSettings": null,
+   "name": "atraz2",
+   "position": [130, -15],
+   "scale": 0.9,
+   "startingAnimation": "",
+   "zIndex": 1
+  },
+  {
+   "assetPath": "atrazdetudomenosdoceu2",
+   "atlasSettings": null,
+   "name": "atraz",
+   "position": [25, -15],
+   "scale": 1,
+   "startingAnimation": "",
+   "zIndex": 1
+  },
+  {
+   "assetPath": "chao",
+   "atlasSettings": null,
+   "name": "chao",
+   "position": [57.5, 0],
+   "scale": 1,
+   "startingAnimation": "",
+   "zIndex": 2
+  },
+  {
+   "assetPath": "shaders",
+   "atlasSettings": null,
+   "name": "shader",
+   "position": [59, -6],
+   "scale": 1,
+   "startingAnimation": "",
+   "zIndex": 1000
+  },
+  {
+   "assetPath": "coisasqueficanafrentedetudo",
+   "atlasSettings": null,
+   "name": "coisasnafrente",
+   "position": [58, 90],
+   "scale": 1,
+   "startingAnimation": "",
+   "zIndex": 500
+  }
+ ],
+ "characters": {
+  "bf": {
+   "cameraOffsets": [-150, -100],
+   "position": [929.4, 646.15],
+   "scale": 0.6,
+   "zIndex": 300
+  },
+  "dad": {
+   "cameraOffsets": [250, -30],
+   "position": [446.988, 637.096],
+   "scale": 0.6,
+   "zIndex": 200
+  },
+  "gf": {
+   "cameraOffsets": [-50, 0],
+   "position": [772.4, 587.4],
+   "scale": 0.6,
+   "zIndex": 100
+  }
+ },
+ "cameraZoom": 1.35
+}

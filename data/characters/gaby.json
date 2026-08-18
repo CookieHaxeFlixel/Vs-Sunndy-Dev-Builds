@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "name": "Gaby",
+  "renderType": "multianimateatlas",
+  "assetPath": "shared:characters/gaby",
+  "flipX": false,
+  "scale": 1.3,
+  "offsets": [30, 14],
+  "cameraOffsets": [-40, -70],
+  "death": {
+    "cameraOffsets": [-73, 42]
+  },
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "Idle"
+    },
+    {
+      "name": "cheer",
+      "prefix": "hey",
+      "offsets": [105, 5]
+    },
+    {
+      "name": "combo50",
+      "prefix": "hey",
+      "offsets": [105, 5]
+    }
+  ]
+}

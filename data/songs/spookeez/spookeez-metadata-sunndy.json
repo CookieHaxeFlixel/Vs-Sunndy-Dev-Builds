@@ -1,0 +1,48 @@
+{
+ "version": "2.2.4",
+ "songName": "Spookeez (Sunndy Mix)",
+ "artist": "Cosmic",
+ "charter": "Enzo Programmer Noob!",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "hard"
+  ],
+  "characters": {
+   "player": "sunndy-playable",
+   "girlfriend": "gaby",
+   "opponent": "spooky",
+   "opponentVocals": [
+    "spooky"
+   ],
+   "playerVocals": [
+    "sunndy-playable"
+   ]
+  },
+  "stage": "spookyMansion",
+  "noteStyle": "funkintemplate",
+  "ratings": {
+   "easy": 5,
+   "normal": 0,
+   "hard": 5,
+   "none": 0
+  },
+  "album": "volume1-sunndy",
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.6",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 151,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 32032.4901,
+   "b": 80.6151,
+   "bpm": 151,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

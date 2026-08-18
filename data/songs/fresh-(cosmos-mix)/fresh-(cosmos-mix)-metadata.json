@@ -1,0 +1,51 @@
+{
+ "version": "2.2.4",
+ "songName": "Fresh (Cosmos Mix)",
+ "artist": "Cosmos!",
+ "charter": "Enzo Programmer Noob!",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "normal"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "gf",
+   "opponent": "dad",
+   "opponentVocals": [
+    "dad"
+   ],
+   "playerVocals": [
+    "bf"
+   ]
+  },
+  "stage": "mainStageTemplate",
+  "noteStyle": "funkintemplate",
+  "album": "expansion2",
+  "ratings": {
+  "normal": 4
+  },
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.4",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 120,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 2061.875,
+   "b": 4.1238,
+   "bpm": 120,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 7589.125,
+   "b": 15.1783,
+   "bpm": 120,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

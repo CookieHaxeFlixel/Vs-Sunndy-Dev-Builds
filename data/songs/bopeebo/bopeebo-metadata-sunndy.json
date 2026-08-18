@@ -1,0 +1,41 @@
+{
+ "version": "2.2.4",
+ "songName": "Bopeebo (Sunndy Mix)",
+ "artist": "Amao_Ren",
+ "charter": "Enzo Programmer Noob!",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "hard"
+  ],
+  "characters": {
+   "player": "sunndy-playable",
+   "girlfriend": "gaby",
+   "opponent": "dad",
+   "instrumental": "sunndy",
+   "opponentVocals": [
+    "dad"
+   ],
+   "playerVocals": [
+    "sunndy-playable"
+   ]
+  },
+  "stage": "mainStageErect",
+  "noteStyle": "funkintemplate",
+  "ratings": {
+   "hard": 5
+  },
+  "album": "volume1-sunndy",
+  "stickerPack": "default",
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.6",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 100,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

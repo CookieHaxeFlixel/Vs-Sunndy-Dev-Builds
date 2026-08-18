@@ -1,0 +1,18 @@
+import funkin.save.Save;
+import funkin.play.song.Song;
+
+class WarmingSong extends Song
+{
+  public function new()
+  {
+    super('warming-up');
+  }
+
+  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
+  {
+    {
+      return !Save.instance.hasBeatenSong(this.id, null, '');
+    }
+    return false;
+  }
+}

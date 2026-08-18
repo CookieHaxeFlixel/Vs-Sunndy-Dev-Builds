@@ -1,0 +1,262 @@
+{
+	"renderType": "multianimateatlas",
+	"offsets": [
+		17,
+		14
+	],
+	"applyStageMatrix": false,
+	"startingAnimation": "idle",
+	"death": {
+		"cameraOffsets": [
+			-73,
+			42
+		]
+	},
+	"healthIcon": {
+		"offsets": [
+			0,
+			0
+		],
+		"id": "sunndy",
+		"flipX": false,
+		"shouldBop": true,
+		"isPixel": false,
+		"scale": 1
+	},
+	"assetPath": "shared:characters/sunndy_playable",
+	"version": "1.0.0",
+	"danceEvery": 2,
+	"scale": 0.9,
+	"name": "Sunndy",
+	"flipX": true,
+	"cameraOffsets": [
+		-18,
+		0
+	],
+	"isPixel": false,
+	"singTime": 8,
+	"atlasSettings": {
+		"applyStageMatrix": false,
+		"useRenderTexture": false,
+		"filterQuality": 1,
+		"cacheOnLoad": false,
+		"swfMode": true
+	},
+	"animations": [
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "idle",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "idle"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				15,
+				5
+			],
+			"frameRate": 24,
+			"prefix": "right",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "singLEFT"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				10,
+				5
+			],
+			"frameRate": 24,
+			"prefix": "down",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "singDOWN"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				-5,
+				10
+			],
+			"frameRate": 24,
+			"prefix": "up",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "singUP"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				15,
+				10
+			],
+			"frameRate": 24,
+			"prefix": "left",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "singRIGHT"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "Left Miss",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "singLEFTmiss"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "Down Miss",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "singDOWNmiss"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "Up Miss",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "singUPmiss"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "Right Miss",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "singRIGHTmiss"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "Hey",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "hey"
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "BruhFace",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "face"
+		},
+		{
+			"offsets": [
+				22,
+				15
+			],
+			"asset": "shared:characters/bf-death",
+			"prefix": "Death Intro",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "firstDeath",
+			"flipY": false,
+			"frameRate": 24,
+			"atlasSettings": {
+				"uniqueInCache": true
+			}
+		},
+		{
+			"offsets": [
+				22,
+				15
+			],
+			"prefix": "Death Loop",
+			"animType": "framelabel",
+			"flipX": false,
+			"name": "deathLoop",
+			"looped": true,
+			"flipY": false,
+			"assetPath": "shared:characters/bf-death",
+			"frameRate": 24
+		},
+		{
+			"offsets": [
+				22,
+				15
+			],
+			"asset": "shared:characters/bf-death",
+			"prefix": "Death Confirm",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "deathConfirm",
+			"flipY": false,
+			"frameRate": 24
+		},
+		{
+			"offsets": [
+				-3,
+				-65
+			],
+			"prefix": "fake out death BF",
+			"flipX": false,
+			"looped": false,
+			"name": "fakeoutDeath",
+			"animType": "symbol",
+			"flipY": false,
+			"assetPath": "shared:characters/bfFakeOut",
+			"frameRate": 24
+		},
+		{
+			"flipY": false,
+			"offsets": [
+				0,
+				0
+			],
+			"frameRate": 24,
+			"prefix": "Scared",
+			"animType": "framelabel",
+			"flipX": false,
+			"looped": false,
+			"name": "scared"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "Sunndy's Mixtapes Vol. 1",
+  "artists": ["Pixel Sycles"],
+  "albumArtAsset": "freeplay/albumRoll/volume1-sunndy",
+  "albumTitleAsset": "freeplay/albumRoll/volume1-sunndy-text",
+  "albumOSTName": "Sunndy Mix OST",
+  "discordRPCImage": "https://cdn.corenexis.com/f/6OACDx5cLef.png",
+  "albumTitleOffsets": [0, -15]
+}

@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "name": "Sunndy Pixel",
+  "assetPath": "characters/sunndypixel",
+  "singTime": 8.0,
+  "isPixel": true,
+  "flipX": true,
+  "scale": 0.4,
+  "cameraOffsets": [-108, 100],
+  "healthIcon": {
+    "id": "sunndypixel",
+    "isPixel": true
+  },
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "idle",
+      "offsets": [327, -100]
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "left",
+      "offsets": [327, -100]
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "down",
+      "offsets": [327, -100]
+    },
+    {
+      "name": "singUP",
+      "prefix": "up",
+      "offsets": [327, -100]
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "right",
+      "offsets": [327, -100]
+    }
+  ]
+}

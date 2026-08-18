@@ -1,0 +1,225 @@
+import funkin.ui.freeplay.backcards.BackingCard;
+import flixel.FlxSprite;
+import funkin.ui.freeplay.FreeplayState;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import funkin.graphics.FunkinSprite;
+import flixel.addons.display.FlxBackdrop;
+import funkin.Conductor;
+
+class HandyCard extends BackingCard
+{
+  var scrollMiddle:FlxBackdrop;
+  var scrollTop:FlxBackdrop;
+  var scrollDown:FlxBackdrop;
+  var bgGradient:FlxSprite;
+  var bgBlack:FlxSprite;
+  var bgGlow:FlxSprite;
+
+  var handyGlow:FlxSprite;
+  var okGlow:FlxSprite;
+  var monickGlow:FlxSprite;
+  var yeahGlow:FlxSprite;
+
+  public function new()
+  {
+    super("");
+  }
+
+  public override function onCreate(event:ScriptEvent):Void
+  {
+    pinkBack.color = 0xFFFFCC00;
+    FlxTween.tween(pinkBack, {x: 0}, 0.6, {ease: FlxEase.quartOut});
+    add(pinkBack);
+
+    bgGlow = new FlxSprite(0, 0).loadGraphic(Paths.image('freeplay/backingCards/handy/bgGlow'));
+    bgGlow.setGraphicSize(550, 750);
+    bgGlow.updateHitbox();
+    add(bgGlow);
+
+    bgGradient = new FlxSprite(0, 0).loadGraphic(Paths.image('freeplay/backingCards/handy/bg'));
+    bgGradient.setGraphicSize(550, 750);
+    bgGradient.updateHitbox();
+    add(bgGradient);
+
+    bgBlack = new FlxSprite(0, 0).loadGraphic(Paths.image('freeplay/backingCards/handy/backGlow'));
+    bgBlack.setGraphicSize(540, 164);
+    bgBlack.setPosition(0, 280);
+    bgBlack.alpha = 0.6;
+    bgBlack.updateHitbox();
+    add(bgBlack);
+
+    scrollTop = new FlxBackdrop(Paths.image('freeplay/backingCards/handy/iconsStripm2'), 0x01, 20);
+    scrollTop.setPosition(0, 90);
+    scrollTop.velocity.x = 150;
+    scrollTop.visible = false;
+    add(scrollTop);
+
+    scrollMiddle = new FlxBackdrop(Paths.image('freeplay/backingCards/handy/iconsStrip'), 0x01, 20);
+    scrollMiddle.setPosition(0, 300);
+    scrollMiddle.velocity.x = -150;
+    scrollMiddle.visible = false;
+    add(scrollMiddle);
+
+    scrollDown = new FlxBackdrop(Paths.image('freeplay/backingCards/handy/iconsStripd'), 0x01, 20);
+    scrollDown.setPosition(0, 550);
+    scrollDown.velocity.x = 150;
+    scrollDown.visible = false;
+    add(scrollDown);
+
+    handyGlow = new FlxSprite(0, 0).loadGraphic(Paths.image('freeplay/backingCards/handy/handyGlow'));
+    handyGlow.setPosition(0, 600);
+    handyGlow.visible = false;
+    add(handyGlow);
+
+    okGlow = new FlxSprite(0, 0).loadGraphic(Paths.image('freeplay/backingCards/handy/okGlow'));
+    okGlow.setPosition(0, 450);
+    okGlow.visible = false;
+    add(okGlow);
+
+    monickGlow = new FlxSprite(0, 0).loadGraphic(Paths.image('freeplay/backingCards/handy/monickGlow'));
+    monickGlow.setPosition(0, 300);
+    monickGlow.visible = false;
+    add(monickGlow);
+
+    yeahGlow = new FlxSprite(0, 0).loadGraphic(Paths.image('freeplay/backingCards/handy/yeahGlow'));
+    yeahGlow.setPosition(0, 100);
+    yeahGlow.visible = false;
+    add(yeahGlow);
+
+    cardGlow.blend = 0;
+    cardGlow.visible = false;
+    add(cardGlow);
+  }
+
+  public override function introDone():Void
+  {
+    pinkBack.color = 0xFFFFCC00;
+    scrollTop.visible = true;
+    scrollMiddle.visible = true;
+    scrollDown.visible = true;
+
+    cardGlow.visible = true;
+    FlxTween.tween(cardGlow, {alpha: 0}, 0.45, {ease: FlxEase.sineOut});
+    FlxTween.tween(cardGlow.scale, {x: 1.2, y: 1.2}, 0.45, {ease: FlxEase.sineOut});
+  }
+
+  public override function confirm():Void
+  {
+    super.confirm();
+
+    FlxTween.tween(bgGradient, {alpha: 0}, 0.1, {ease: FlxEase.sineOut});
+    FlxTween.tween(bgBlack, {alpha: 0}, 0.1, {ease: FlxEase.sineOut});
+    FlxTween.tween(scrollTop, {alpha: 0}, 0.1, {ease: FlxEase.sineOut});
+    FlxTween.tween(scrollMiddle, {alpha: 0}, 0.1, {ease: FlxEase.sineOut});
+    FlxTween.tween(scrollDown, {alpha: 0}, 0.1, {ease: FlxEase.sineOut});
+
+    // flash branco rápido
+    cardGlow.alpha = 1;
+    cardGlow.visible = true;
+    cardGlow.scale.set(1, 1);
+    FlxTween.tween(cardGlow, {alpha: 0}, 10 / 24, {ease: FlxEase.sineOut});
+
+    // glows de texto aparecem finos por 3 frames depois expandem
+    handyGlow.visible = true;
+    okGlow.visible = true;
+    monickGlow.visible = true;
+    yeahGlow.visible = true;
+
+    handyGlow.alpha = 1;
+    okGlow.alpha = 1;
+    monickGlow.alpha = 1;
+    yeahGlow.alpha = 1;
+
+    handyGlow.scale.y = 0.06;
+    okGlow.scale.y = 0.06;
+    monickGlow.scale.y = 0.06;
+    yeahGlow.scale.y = 0.06;
+
+    FlxTween.tween(handyGlow.scale, {y: 1.0}, 1 / 24, {ease: FlxEase.linear, onComplete: function(_) {
+      FlxTween.tween(handyGlow, {alpha: 0.8}, 0.1, {ease: FlxEase.sineOut});
+    }});
+    FlxTween.tween(okGlow.scale, {y: 1.0}, 1 / 24, {ease: FlxEase.linear, onComplete: function(_) {
+      FlxTween.tween(okGlow, {alpha: 0.8}, 0.1, {ease: FlxEase.sineOut, startDelay: 0.05});
+    }});
+    FlxTween.tween(monickGlow.scale, {y: 1.0}, 1 / 24, {ease: FlxEase.linear, onComplete: function(_) {
+      FlxTween.tween(monickGlow, {alpha: 0.8}, 0.1, {ease: FlxEase.sineOut, startDelay: 0.1});
+    }});
+    FlxTween.tween(yeahGlow.scale, {y: 1.0}, 1 / 24, {ease: FlxEase.linear, onComplete: function(_) {
+      FlxTween.tween(yeahGlow, {alpha: 0.8}, 0.1, {ease: FlxEase.sineOut, startDelay: 0.15});
+    }});
+  }
+
+  public override function disappear():Void
+  {
+    FlxTween.color(pinkBack, 0.25, 0xFFFFCC00, 0xFFFFD0D5, {ease: FlxEase.quadOut});
+
+    scrollTop.visible = false;
+    scrollMiddle.visible = false;
+    scrollDown.visible = false;
+    handyGlow.visible = false;
+    okGlow.visible = false;
+    monickGlow.visible = false;
+    yeahGlow.visible = false;
+
+    FlxTween.tween(bgBlack, {x: -600}, 0.3, {ease: FlxEase.quartIn, onComplete: function(_) {
+      FlxTween.tween(bgGradient, {x: -600}, 0.3, {ease: FlxEase.quartIn});
+    }});
+
+    FlxTween.tween(bgGlow, {x: -600}, 0.3, {ease: FlxEase.quartIn, onComplete: function(_) {
+      FlxTween.tween(handyGlow, {x: -600}, 0.3, {ease: FlxEase.quartIn});
+    }});
+
+    cardGlow.visible = true;
+    cardGlow.alpha = 1;
+    cardGlow.scale.set(1, 1);
+    FlxTween.tween(cardGlow, {alpha: 0}, 0.25, {ease: FlxEase.sineOut});
+    FlxTween.tween(cardGlow.scale, {x: 1.2, y: 1.2}, 0.25, {ease: FlxEase.sineOut});
+  }
+
+  public override function enterCharSel():Void
+  {
+    FlxTween.tween(scrollTop.velocity, {x: 0}, 0.8, {ease: FlxEase.sineIn});
+    FlxTween.tween(scrollMiddle.velocity, {x: 0}, 0.8, {ease: FlxEase.sineIn});
+    FlxTween.tween(scrollDown.velocity, {x: 0}, 0.8, {ease: FlxEase.sineIn});
+  }
+
+  public override function beatHit():Void
+  {
+    FlxTween.cancelTweensOf(bgGradient);
+    FlxTween.cancelTweensOf(scrollTop);
+    FlxTween.cancelTweensOf(scrollMiddle);
+    FlxTween.cancelTweensOf(scrollDown);
+
+    bgGradient.color = 0xFF00C8C8;
+    FlxTween.color(bgGradient, 20 / 24, 0xFF00C8C8, 0xFFFFFFFF, {ease: FlxEase.quartOut});
+
+    scrollTop.velocity.x = 0;
+    scrollMiddle.velocity.x = 0;
+    scrollDown.velocity.x = 0;
+
+    scrollTop.alpha = 1.0;
+    scrollMiddle.alpha = 1.0;
+    scrollDown.alpha = 1.0;
+
+    FlxTween.tween(scrollTop, {alpha: 0.8}, 16 / 24, {ease: FlxEase.quartOut, onComplete: function(_) {
+      scrollTop.velocity.x = 150;
+    }});
+    FlxTween.tween(scrollMiddle, {alpha: 0.8}, 16 / 24, {ease: FlxEase.quartOut, onComplete: function(_) {
+      scrollMiddle.velocity.x = -150;
+    }});
+    FlxTween.tween(scrollDown, {alpha: 0.8}, 16 / 24, {ease: FlxEase.quartOut, onComplete: function(_) {
+      scrollDown.velocity.x = 150;
+    }});
+  }
+
+  public override function applyExitMovers(?exitMovers:FreeplayState.ExitMoverData, ?exitMoversCharSel:FreeplayState.ExitMoverData):Void
+  {
+    super.applyExitMovers(exitMovers, exitMoversCharSel);
+    if (exitMovers == null || exitMoversCharSel == null) return;
+
+    exitMoversCharSel.set([scrollTop], {y: -90, speed: 0.8, wait: 0.1});
+    exitMoversCharSel.set([scrollMiddle], {y: -60, speed: 0.8, wait: 0.1});
+    exitMoversCharSel.set([scrollDown], {y: -30, speed: 0.8, wait: 0.1});
+  }
+}

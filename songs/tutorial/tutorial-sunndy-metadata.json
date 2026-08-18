@@ -1,0 +1,38 @@
+{
+ "version": "2.2.4",
+ "songName": "tutorial-(sunndy-mix)",
+ "charter": "V-Slice Converter",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "hard"
+  ],
+  "characters": {
+   "player": "sunndy-playable",
+   "opponent": "gaby",
+   "opponentVocals": [
+    "dad"
+   ],
+   "playerVocals": [
+    "bf"
+   ]
+  },
+  "stage": "mainStageErect",
+  "noteStyle": "funkintemplate",
+  "ratings": {
+   "easy": 3,
+   "normal": 5,
+   "hard": 6
+  },
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.4",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 100,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

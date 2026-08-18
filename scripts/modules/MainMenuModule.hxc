@@ -1,0 +1,49 @@
+import funkin.modding.module.Module;
+import funkin.ui.mainmenu.MainMenuState;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.util.FlxTimer;
+
+class MainMenuModule extends Module {
+    var overlayAdded:Bool = false;
+
+    public function new() {
+        super("MainMenuModule");
+    }
+    
+    public override function onStateChangeEnd(event) {
+        if (FlxG.state != null && Std.isOfType(FlxG.state, MainMenuState)) {
+            var mainMenu:MainMenuState = FlxG.state;
+            
+            if (!overlayAdded)
+            {
+                var bgOverlay:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bgBack'));
+                bgOverlay.setGraphicSize(FlxG.width, FlxG.height);
+                bgOverlay.updateHitbox();
+                bgOverlay.alpha = 0.8;
+                bgOverlay.scrollFactor.set(0, 0);
+                mainMenu.insert(1, bgOverlay);
+                overlayAdded = true;
+            }
+
+            new FlxTimer().start(0.1, function(timer:FlxTimer) {
+                moveMenuItems(mainMenu);
+            });
+        }
+        else
+        {
+            overlayAdded = false;
+        }
+    }
+    
+    function moveMenuItems(mainMenu:MainMenuState) {
+        if (mainMenu.menuItems != null) {
+            for (i in 0...mainMenu.menuItems.length) {
+                var item = mainMenu.menuItems.members[i];
+                if (item != null) {
+                    item.x = FlxG.width - 410;
+                }
+            }
+        }
+    }
+}

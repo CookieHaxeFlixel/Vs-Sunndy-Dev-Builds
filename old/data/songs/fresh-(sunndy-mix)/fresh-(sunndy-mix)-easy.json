@@ -1,0 +1,495 @@
+{
+	"player1": "bf",
+	"player2": "dad",
+	"notes": [
+		{
+			"sectionNotes": [
+				[0, 5, 0],
+				[300, 5, 0],
+				[693.75, 5, 0],
+				[1012.5, 6, 0],
+				[1443.75, 5, 0],
+				[1766.25, 7, 0],
+				[1950, 2, 0],
+				[2160, 1, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[2400, 2, 0],
+				[2681.25, 1, 0],
+				[3000, 1, 0],
+				[3206.25, 3, 0],
+				[3750, 0, 0],
+				[3900, 5, 0],
+				[4275, 4, 0],
+				[4747.5, 4, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[4991.25, 7, 0],
+				[5186.25, 5, 0],
+				[5535, 4, 0],
+				[5748.75, 7, 0],
+				[6071.25, 1, 0],
+				[6393.75, 0, 0],
+				[6993.75, 3, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[7455, 1, 0],
+				[7766.25, 2, 0],
+				[8250, 4, 0],
+				[8475, 5, 0],
+				[8917.5, 6, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[10166.25, 0, 225],
+				[10447.5, 3, 0],
+				[10950, 1, 0],
+				[11250, 3, 0],
+				[11527.5, 3, 0],
+				[11958.75, 2, 1050]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[12251.25, 4, 0],
+				[12708.75, 7, 0],
+				[12926.25, 4, 0],
+				[14250, 0, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[14508.75, 3, 0],
+				[14958.75, 0, 0],
+				[15262.5, 1, 0],
+				[15495, 1, 0],
+				[15750, 2, 0],
+				[16200, 4, 0],
+				[16736.25, 4, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[17010, 7, 0],
+				[17471.25, 6, 0],
+				[18187.5, 0, 0],
+				[18686.25, 3, 0],
+				[18967.5, 0, 150]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[19500, 2, 0],
+				[19950, 3, 1050],
+				[19950, 4, 0],
+				[20163.75, 5, 0],
+				[20700, 7, 0],
+				[20955, 5, 0],
+				[21213.75, 4, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[21750, 6, 0],
+				[21990, 3, 0],
+				[22500, 1, 0],
+				[22950, 1, 0],
+				[23452.5, 3, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[24000, 4, 0],
+				[24000, 2, 600],
+				[24450, 7, 0],
+				[24978.75, 5, 0],
+				[25200, 2, 0],
+				[25447.5, 7, 0],
+				[25496.25, 1, 0],
+				[25950, 5, 0],
+				[26032.5, 2, 900]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[26400, 7, 0],
+				[26700, 4, 0],
+				[26958.75, 0, 900],
+				[27150, 7, 0],
+				[27408.75, 5, 0],
+				[27986.25, 3, 0],
+				[28417.5, 1, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[28905, 0, 0],
+				[29456.25, 1, 0],
+				[29932.5, 3, 0],
+				[30450, 0, 0],
+				[30750, 2, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[31200, 0, 0],
+				[31721.25, 2, 0],
+				[32043.75, 0, 900],
+				[32471.25, 4, 0],
+				[32910, 5, 0],
+				[33420, 4, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[33731.25, 6, 0],
+				[34263.75, 7, 0],
+				[34758.75, 4, 0],
+				[34950, 6, 525],
+				[35460, 5, 450]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[36450, 3, 0],
+				[36997.5, 3, 0],
+				[37477.5, 2, 0],
+				[37800, 0, 450],
+				[38250, 3, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[38700, 3, 0],
+				[38970, 0, 600],
+				[39547.5, 2, 525],
+				[40001.25, 3, 750],
+				[40278.75, 4, 0],
+				[40728.75, 7, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[41186.25, 4, 0],
+				[41700, 6, 0],
+				[41958.75, 4, 525],
+				[42450, 6, 525],
+				[42963.75, 7, 525]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[43500, 6, 450],
+				[43950, 4, 750],
+				[44250, 2, 0],
+				[44718.75, 3, 0],
+				[44985, 0, 0],
+				[45450, 0, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[45712.5, 1, 0],
+				[45952.5, 3, 525],
+				[46455, 1, 525],
+				[46980, 2, 450],
+				[47448.75, 0, 525]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[48000, 4, 0],
+				[48000, 3, 750],
+				[48232.5, 4, 0],
+				[48701.25, 5, 0],
+				[49305, 7, 0],
+				[49500, 5, 0],
+				[50036.25, 4, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[50508.75, 7, 0],
+				[50756.25, 4, 0],
+				[50992.5, 6, 0],
+				[51247.5, 5, 0],
+				[51536.25, 7, 0],
+				[51993.75, 4, 1125],
+				[51993.75, 3, 0],
+				[52200, 3, 0],
+				[52462.5, 2, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[52935, 0, 0],
+				[53193.75, 1, 0],
+				[53677.5, 0, 0],
+				[53940, 2, 0],
+				[54251.25, 3, 450],
+				[54735, 2, 525]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[55200, 1, 0],
+				[55781.25, 3, 0],
+				[55968.75, 7, 0],
+				[56013.75, 0, 900],
+				[56490, 4, 0],
+				[57000, 5, 0],
+				[57450, 4, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[57948.75, 5, 0],
+				[58200, 6, 0],
+				[58668.75, 6, 0],
+				[58923.75, 5, 0],
+				[59426.25, 7, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[60000, 2, 0],
+				[60461.25, 1, 0],
+				[60937.5, 0, 0],
+				[61451.25, 1, 0],
+				[61942.5, 3, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[62448.75, 1, 0],
+				[62771.25, 0, 0],
+				[63240, 3, 0],
+				[63776.25, 0, 0],
+				[64027.5, 3, 600],
+				[64500, 4, 0],
+				[64725, 7, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[65205, 7, 0],
+				[65486.25, 5, 0],
+				[65550, 1, 450],
+				[65771.25, 6, 0],
+				[65985, 3, 450],
+				[66217.5, 5, 0],
+				[66487.5, 6, 0],
+				[66930, 6, 450],
+				[66978.75, 2, 525]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[67425, 5, 600],
+				[67500, 1, 525],
+				[68448.75, 0, 0],
+				[69000, 0, 0],
+				[69251.25, 3, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[69783.75, 0, 450],
+				[70215, 2, 0],
+				[70466.25, 1, 0],
+				[70976.25, 1, 525],
+				[71520, 2, 450]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[72000, 5, 0],
+				[72000, 3, 900],
+				[72367.5, 5, 0],
+				[72750, 5, 0],
+				[72986.25, 6, 0],
+				[73200, 5, 0],
+				[73447.5, 4, 0],
+				[73687.5, 4, 0],
+				[74017.5, 2, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": false
+		},
+		{
+			"sectionNotes": [
+				[74505, 3, 0],
+				[74700, 1, 0],
+				[75240, 1, 0],
+				[75472.5, 3, 0],
+				[76020, 6, 0],
+				[76267.5, 5, 0],
+				[76732.5, 5, 0]
+			],
+			"sectionBeats": 4,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[76976.25, 6, 0],
+				[77460, 5, 0],
+				[77700, 6, 0],
+				[78000, 1, 0],
+				[78225, 2, 0],
+				[78806.25, 1, 0]
+			],
+			"sectionBeats": 4,
+			"gfSection": false,
+			"altAnim": false,
+			"bpm": 100,
+			"changeBPM": false,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[79410, 1, 0],
+				[79713.75, 0, 0],
+				[80021.25, 5, 0],
+				[80445, 4, 0],
+				[80692.5, 5, 0],
+				[81258.75, 5, 0]
+			],
+			"sectionBeats": 4,
+			"gfSection": false,
+			"altAnim": false,
+			"bpm": 100,
+			"changeBPM": false,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[81705, 7, 0],
+				[82020, 1, 0],
+				[82233.75, 2, 0],
+				[82545, 2, 0],
+				[83043.75, 3, 0],
+				[83505, 3, 0],
+				[83988.75, 4, 0]
+			],
+			"sectionBeats": 4,
+			"gfSection": false,
+			"altAnim": false,
+			"bpm": 100,
+			"changeBPM": false,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[84210, 6, 0],
+				[84682.5, 7, 0],
+				[84963.75, 6, 0],
+				[85530, 6, 0],
+				[86047.5, 2, 0],
+				[86250, 1, 0]
+			],
+			"sectionBeats": 4,
+			"gfSection": false,
+			"altAnim": false,
+			"bpm": 100,
+			"changeBPM": false,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [
+				[86816.25, 1, 0],
+				[87510, 1, 0],
+				[87791.25, 2, 0]
+			],
+			"sectionBeats": 4,
+			"gfSection": false,
+			"altAnim": false,
+			"bpm": 100,
+			"changeBPM": false,
+			"mustHitSection": true
+		},
+		{
+			"sectionNotes": [],
+			"sectionBeats": 4,
+			"gfSection": false,
+			"altAnim": false,
+			"bpm": 100,
+			"changeBPM": false,
+			"mustHitSection": true
+		}
+	],
+	"gfVersion": "gf",
+	"events": [],
+	"song": "fresh (sunndy mix)",
+	"stage": "stage",
+	"needsVoices": true,
+	"format": "psych_v1_convert",
+	"speed": 1.3,
+	"bpm": 100
+}

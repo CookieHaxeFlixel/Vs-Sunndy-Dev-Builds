@@ -1,0 +1,61 @@
+{
+ "version": "2.2.4",
+ "songName": "Skyscraper",
+ "artist": "Nonndy / Postal Dude",
+ "charter": "Enzo Programmer Noob!",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf",
+   "girlfriend": "gf",
+   "opponent": "sunndy",
+   "opponentVocals": [
+    "sunndy"
+   ],
+   "playerVocals": [
+    "bf"
+   ]
+  },
+  "stage": "sunndy",
+  "noteStyle": "funkin",
+  "ratings": {
+   "easy": 4,
+   "normal": 6,
+   "hard": 7
+  },
+  "album": "volume1-sunndy",
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.6",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 120,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 63591,
+   "b": 127.182,
+   "bpm": 130,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 78827,
+   "b": 160.1933,
+   "bpm": 140,
+   "bt": [4, 4, 4, 4]
+  },
+  {
+   "t": 92497.0001,
+   "b": 192.09,
+   "bpm": 120,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

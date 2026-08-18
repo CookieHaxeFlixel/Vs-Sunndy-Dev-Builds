@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "bgAsset": "freeplay/SunndyFreeplayBG",
+  "selectorAsset": "freeplay/freeplaySelector",
+  "numbersAsset": "digital_numbers",
+  "capsuleAsset": "freeplay/freeplayCapsule/capsule/freeplayCapsulesunndy",
+  "capsuleTextColors": ["#6959cd", "#6959cd"],
+  "startDelay": 1.0
+}

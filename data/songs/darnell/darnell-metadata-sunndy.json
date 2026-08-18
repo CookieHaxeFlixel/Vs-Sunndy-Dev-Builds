@@ -1,0 +1,41 @@
+{
+ "version": "2.2.4",
+ "songName": "Darnell (Sunndy Mix)",
+ "artist": "Cosmic",
+ "charter": "DuduYTGamer",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "hard"
+  ],
+  "characters": {
+   "player": "sunndy-playable",
+   "girlfriend": "gaby",
+   "opponent": "darnell",
+   "instrumental": "sunndy",
+   "opponentVocals": [
+    "darnell"
+   ],
+   "playerVocals": [
+    "sunndy-playable"
+   ]
+  },
+  "stage": "phillyStreetsErect",
+  "noteStyle": "funkintemplate",
+  "ratings": {
+   "normal": 0,
+   "hard": 5
+  },
+  "album": "volume1-sunndy",
+  "previewEnd": 0
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.6",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 155,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
+}

@@ -1,0 +1,303 @@
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxTimer;
+import flixel.text.FlxText;
+import flixel.text.FlxTextBorderStyle;
+import flixel.util.FlxColor;
+import funkin.play.PlayState;
+import funkin.play.song.Song;
+import funkin.audio.FunkinSound;
+import funkin.graphics.FunkinSprite;
+import funkin.util.Sequence;
+import funkin.save.Save;
+import funkin.ui.FullScreenScaleMode as FSSM;
+#if mobile
+import funkin.util.TouchUtil;
+#end
+
+class SkyscraperSong extends Song
+{
+  var PS(get, never):PlayState;
+
+  function get_PS()
+  {
+    return PlayState.instance;
+  }
+
+  var hasPlayedCutscene:Bool = false;
+  var cutsceneSkipped:Bool = false;
+  var awaitingSecondTap:Bool = false;
+  var skipText:FlxText;
+  var mobileSkipZone:FunkinSprite;
+
+  var cutsceneMusic:FunkinSound;
+  var bundasSfx:FunkinSound;
+  var cutsceneSeq:Sequence;
+
+  var dad;
+  var bf;
+  var gf;
+
+  public function new()
+  {
+    super('skyscraper');
+  }
+
+  public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool
+  {
+    return !Save.instance.hasBeatenSong(this.id, null, '');
+  }
+
+  override public function onCreate(event):Void
+  {
+    super.onCreate(event);
+    hasPlayedCutscene = false;
+    cutsceneSkipped = false;
+    awaitingSecondTap = false;
+  }
+
+  override public function onUpdate(event):Void
+  {
+    super.onUpdate(event);
+
+    #if mobile
+    var mobileSkipPressed = (mobileSkipZone != null && TouchUtil.overlapsComplex(mobileSkipZone) && TouchUtil.justPressed)
+      || (PS.pauseButton != null && TouchUtil.overlapsComplex(PS.pauseButton) && TouchUtil.justPressed);
+    #end
+
+    if ((PS.controls.CUTSCENE_ADVANCE #if mobile || mobileSkipPressed #end) && PS.isInCutscene && !cutsceneSkipped)
+    {
+      if (awaitingSecondTap)
+      {
+        skipCutscene();
+      }
+      else
+      {
+        if (skipText != null)
+        {
+          FlxTween.cancelTweensOf(skipText);
+          FlxTween.tween(skipText, {alpha: 1}, 1.0, {ease: FlxEase.quadOut});
+
+          new FlxTimer().start(10.0, _ ->
+          {
+            if (!cutsceneSkipped && skipText != null)
+            {
+              FlxTween.cancelTweensOf(skipText);
+              FlxTween.tween(skipText, {alpha: 0}, 0.5, {ease: FlxEase.linear});
+            }
+          });
+        }
+
+        awaitingSecondTap = true;
+        new FlxTimer().start(10.0, _ -> awaitingSecondTap = false);
+      }
+    }
+  }
+
+  override public function onSongStart(event):Void
+  {
+    super.onSongStart(event);
+
+    // libera a dança automática normal só quando a música de verdade começa
+    if (dad != null) dad.dance(true);
+    if (bf != null) bf.dance(true);
+    if (gf != null) gf.dance(true);
+  }
+
+  override public function onCountdownStart(event):Void
+  {
+    super.onCountdownStart(event);
+
+    if (hasPlayedCutscene) return;
+    hasPlayedCutscene = true;
+    event.cancel();
+
+    PS.isInCutscene = true;
+    PS.disableKeys = true;
+    PS.camHUD.visible = false;
+    PS.camHUD.alpha = 0;
+
+    dad = PS.currentStage.getDad();
+    bf = PS.currentStage.getBoyfriend();
+    gf = PS.currentStage.getGirlfriend();
+
+    // pequeno delay pra garantir que os personagens já carregaram de verdade
+    new FlxTimer().start(0.05, _ ->
+    {
+      // texto de skip (invisível até o primeiro toque)
+      skipText = new FlxText(936 * FSSM.wideScale.x, 618 * FSSM.wideScale.y, 0, null, 20);
+      skipText.text = 'Skip [${PS.controls.getDialogueNameFromToken("CUTSCENE_ADVANCE", true)}]';
+      #if mobile
+      skipText.text = 'Skip [TAP]';
+      #end
+      skipText.setFormat(Paths.font('vcr.ttf'), 40, 0xFFFFFFFF, "right", FlxTextBorderStyle.OUTLINE, 0xFF000000);
+      skipText.scrollFactor.set();
+      skipText.borderSize = 2;
+      skipText.alpha = 0;
+      skipText.cameras = [PS.camCutscene];
+      PS.add(skipText);
+
+      #if mobile
+      mobileSkipZone = new FunkinSprite(0, 0);
+      mobileSkipZone.makeSolidColor(Std.int(FlxG.width), Std.int(FlxG.height), FlxColor.TRANSPARENT);
+      mobileSkipZone.scrollFactor.set();
+      mobileSkipZone.cameras = [PS.camHUD];
+      PS.add(mobileSkipZone);
+      #end
+
+      cutsceneMusic = FunkinSound.load(Paths.music('tutorialMix'), true);
+      cutsceneMusic.play();
+
+      PS.tweenCameraToPosition(dad.cameraFocusPoint.x, dad.cameraFocusPoint.y, 0);
+      PS.tweenCameraZoom(PS.stageZoom * 1.08, 0, true);
+
+      PS.camCutscene.fade(0xFF000000, 0.5, true, null, true);
+
+      dad.playAnimation('face', true, true);
+
+      freezeOnLastFrame(bf, 'idle');
+      if (gf != null) freezeOnLastFrame(gf, 'idle');
+
+      var cutsceneSequenceData = [
+        {
+          time: 1.0,
+          callback: () ->
+          {
+            dad.animation.curAnim.looped = false;
+            dad.animation.onFinish.add(function(name:String)
+            {
+              if (name == 'face')
+              {
+                dad.animation.pause();
+                PS.tweenCameraToPosition(bf.cameraFocusPoint.x, bf.cameraFocusPoint.y, 2.0, FlxEase.quadOut);
+              }
+            });
+            dad.playAnimation('face', true, false);
+          }
+        },
+        {
+          time: 4.0,
+          callback: () ->
+          {
+            bundasSfx = FunkinSound.load(Paths.sound('bundasSunndy'));
+
+            bf.animation.curAnim.looped = true;
+            bf.playAnimation('singUp', true);
+
+            bundasSfx.onComplete = () ->
+            {
+              if (cutsceneSkipped) return;
+              freezeOnLastFrame(bf, 'idle');
+              PS.tweenCameraToPosition(dad.cameraFocusPoint.x, dad.cameraFocusPoint.y, 2.0, FlxEase.quadOut);
+
+              new FlxTimer().start(1.0, _ ->
+              {
+                if (cutsceneMusic != null) FlxTween.tween(cutsceneMusic, {pitch: 0.0}, 1.0, {ease: FlxEase.linear});
+                if (skipText != null) FlxTween.tween(skipText, {alpha: 0}, 1.0, {ease: FlxEase.linear});
+              });
+
+              new FlxTimer().start(2.0, _ -> finishCutscene());
+            };
+
+            bundasSfx.play();
+          }
+        }
+      ];
+
+      cutsceneSeq = new Sequence(cutsceneSequenceData);
+    });
+    }
+
+  function finishCutscene():Void
+  {
+    if (cutsceneSkipped) return;
+
+    cleanupSkipText();
+    PS.camHUD.visible = true;
+    FlxTween.tween(PS.camHUD, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
+
+    PS.disableKeys = false;
+    PS.startCountdown();
+  }
+
+  function skipCutscene():Void
+  {
+    cutsceneSkipped = true;
+
+    if (cutsceneSeq != null)
+    {
+      cutsceneSeq.running = false;
+      cutsceneSeq = null;
+    }
+
+    cleanupSkipText();
+
+    #if mobile
+    if (mobileSkipZone != null)
+    {
+      PS.remove(mobileSkipZone);
+      mobileSkipZone = null;
+    }
+    #end
+
+    PS.camCutscene.fade(0xFF000000, 1.0, false, null, true);
+
+    new FlxTimer().start(1.0, _ ->
+    {
+      PS.camCutscene.fade(0xFF000000, 0.5, true, null, true);
+
+      if (cutsceneMusic != null) cutsceneMusic.stop();
+      if (bundasSfx != null) bundasSfx.stop();
+
+      dad.animation.curAnim.looped = true;
+      dad.playAnimation('idle', true);
+      bf.animation.curAnim.looped = true;
+      bf.playAnimation('idle', true);
+      if (gf != null)
+      {
+        gf.animation.curAnim.looped = true;
+        gf.playAnimation('idle', true);
+      }
+
+      PS.tweenCameraToPosition(dad.cameraFocusPoint.x, dad.cameraFocusPoint.y, 0);
+      PS.tweenCameraZoom(PS.stageZoom, 0, true);
+
+      PS.camHUD.visible = true;
+      PS.camHUD.alpha = 1;
+
+      PS.disableKeys = false;
+      PS.startCountdown();
+    });
+  }
+
+  function freezeOnLastFrame(character, animName:String):Void
+  {
+    character.playAnimation(animName, true);
+    if (character.animation.curAnim != null) character.animation.curAnim.looped = false;
+    character.animation.onFinish.add(function(name:String)
+    {
+      if (name == animName) character.animation.pause();
+    });
+  }
+
+  function cleanupSkipText():Void
+  {
+    if (skipText != null)
+    {
+      skipText.kill();
+      skipText.destroy();
+      skipText = null;
+    }
+  }
+
+  override public function onDestroy(event):Void
+  {
+    super.onDestroy(event);
+    if (cutsceneSeq != null)
+    {
+      cutsceneSeq.running = false;
+      cutsceneSeq = null;
+    }
+    PS.isInCutscene = false;
+  }
+}

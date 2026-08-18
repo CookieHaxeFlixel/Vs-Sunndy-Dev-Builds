@@ -1,0 +1,76 @@
+import flixel.FlxG;
+import funkin.play.character.MultiSparrowCharacter;
+import funkin.play.GameOverSubState;
+import funkin.play.PauseSubState;
+import funkin.play.PlayState;
+import funkin.Preferences;
+import funkin.util.Constants;
+import flixel.util.FlxTimer;
+import funkin.util.HapticUtil;
+import funkin.graphics.FunkinSprite;
+
+class HandreioxCharacter extends MultiSparrowCharacter
+{
+  var handyGameover:FunkinSprite;
+
+  function new()
+  {
+    super('');
+  }
+
+  function onCreate(event:ScriptEvent)
+  {
+    super.onCreate(event);
+
+    GameOverSubState.musicSuffix = '-pico';
+    GameOverSubState.blueBallSuffix = '-pico';
+    PauseSubState.musicSuffix = '-pico';
+  }
+
+function onGameOver(event:ScriptEvent)
+{
+  super.onGameOver(event);
+
+  var charX:Float = this.x;
+  var charY:Float = this.y;
+
+  this.visible = false;
+
+  new FlxTimer().start(0.1, function(_)
+  {
+    if (GameOverSubState.instance != null)
+    {
+      handyGameover = FunkinSprite.createSparrow(0, 0, "characters/Handygameover");
+      handyGameover.animation.addByPrefix('start', 'Handygameouver', 24, false);
+      handyGameover.animation.play('start');
+      handyGameover.x = charX;
+      handyGameover.y = charY;
+      GameOverSubState.instance.add(handyGameover);
+    }
+  });
+}
+
+  function onAnimationFrame(name:String, frameNumber:Int, frameIndex:Int)
+  {
+    super.onAnimationFrame(name, frameNumber, frameIndex);
+
+    if (!HapticUtil.hapticsAvailable) return;
+
+    if (name == 'Handygameouver' && frameNumber == 0)
+    {
+      HapticUtil.vibrate(0, 0.1, 0.1, 1);
+    }
+  }
+
+  override function playAnimation(name:String, restart:Bool = false, ignoreOther:Bool = false)
+  {
+    super.playAnimation(name, restart, ignoreOther);
+  }
+
+  function onGameOverEnd(event:ScriptEvent)
+{
+  super.onGameOverEnd(event);
+
+  this.visible = true;
+}
+}

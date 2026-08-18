@@ -1,0 +1,97 @@
+{
+  "ATLAS": {
+    "SPRITES": [
+      {
+        "SPRITE": {
+          "name": "0",
+          "x": 0,
+          "y": 0,
+          "w": 215,
+          "h": 402,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "1",
+          "x": 0,
+          "y": 404,
+          "w": 215,
+          "h": 402,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "2",
+          "x": 0,
+          "y": 404,
+          "w": 215,
+          "h": 402,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "3",
+          "x": 0,
+          "y": 0,
+          "w": 215,
+          "h": 402,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "4",
+          "x": 0,
+          "y": 0,
+          "w": 215,
+          "h": 402,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "5",
+          "x": 0,
+          "y": 0,
+          "w": 215,
+          "h": 402,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "6",
+          "x": 0,
+          "y": 0,
+          "w": 215,
+          "h": 402,
+          "rotated": false
+        }
+      },
+      {
+        "SPRITE": {
+          "name": "7",
+          "x": 0,
+          "y": 0,
+          "w": 215,
+          "h": 402,
+          "rotated": false
+        }
+      }
+    ],
+    "meta": {
+      "app": "Spritemap Convert Web",
+      "version": "22.0.5.191",
+      "image": "spritemap1.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 215,
+        "h": 806
+      },
+      "resolution": "1"
+    }
+  }
+}
